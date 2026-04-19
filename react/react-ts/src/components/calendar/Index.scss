@@ -1,0 +1,38 @@
+.calendar {
+  width: 100%;
+  height: 200px;
+}
+
+.calendar-month{
+    &-week{
+        display: flex;
+        padding: 0;
+        width: 100%;
+        box-sizing: border-box;
+        border-bottom: 1px solid #ccc;
+        &-item{
+            padding: 20px 16px;
+            text-align: left;
+            color: #7d7d7d;
+            flex: 1;
+        }
+    }
+    &-days{
+        &-row{
+            height: 100px;
+            display: flex;
+        }
+        &-cell{
+            flex: 1;
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 10px;
+            color: #ccc;
+            &-current{
+                color: #000000;
+            }
+        }
+    }
+}
+
+

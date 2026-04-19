@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #model{
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            border: 1px solid #000;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn1">open1</button>
+    <button id="close">open2</button>
+
+<script>
+    let btn1 = document.getElementById("btn1")
+    let btn2 = document.getElementById("close")
+
+    const Model = (function(){
+        let model = null
+        return function(){
+            if(!model){
+                model = document.createElement('div')
+                model.innerHTML = '我是弹窗'
+                model.id = 'model'
+                model.style.display = 'none'
+                document.body.appendChild(model)
+            }
+            return model
+        }
+    })()
+
+    btn1.addEventListener('click',function() {
+        const model = new Model()
+        model.style.display='block'
+    })
+
+    btn2.addEventListener('click',function() {
+        const model = new Model()
+        if(model){
+            model.style.display= 'none'
+        }
+    })
+
+
+
+</script>
+</body>
+</html>

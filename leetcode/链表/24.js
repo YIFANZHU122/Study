@@ -1,0 +1,10 @@
+    let ret = new ListNode(0,head)
+    let temp = ret
+    while(temp.next && temp.next.next) {
+        let cur = temp.next.next,pre = temp.next
+        pre.next = cur.next
+        cur.next = pre
+        temp.next = cur
+        temp = pre
+    }
+    return ret.next

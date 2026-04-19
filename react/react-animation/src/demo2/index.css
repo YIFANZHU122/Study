@@ -1,0 +1,18 @@
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    animation: rotateZ 1s linear infinite;
+}
+
+@keyframes rotateZ {
+    0%{
+        transform: translate(0px) rotate(0deg) ;
+    }
+    100%{
+        transform: translate(300px) rotate(360deg) ;
+
+    }
+
+
+}
